@@ -22,6 +22,22 @@ public class MealWithExceed {
         this.exceed = exceed;
     }
 
+    public String getDateTimeWithoutT() {
+        return dateTime.toString().replaceAll("T", " ");
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public boolean isExceed() {
+        return exceed;
+    }
+
     @Override
     public String toString() {
         return "UserMealWithExceed{" +
