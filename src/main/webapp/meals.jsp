@@ -20,30 +20,37 @@
 
 <body>
 <div class="container">
-<h2><a href="index.html">Home</a></h2>
+<h2><a href="index.jsp">Home</a></h2>
 <table class="table table-striped">
     <tr>
+        <th>id</th>
         <th>Дата и время</th>
         <th>Описание</th>
         <th>Калории</th>
     </tr>
 
     <c:forEach var="meal" items="${meals}">
-        <c:if test="${meal.isExceed()}">
-            <tr class="danger">
-                <td>${meal.getDateTimeWithoutT()}</td>
-                <td>${meal.getDescription()}</td>
-                <td>${meal.getCalories()}</td>
-            </tr>
-        </c:if>
+        <%--<c:if test="${meal.isExceed()}">--%>
+            <%--<tr class="danger">--%>
+                <%--<td>${meal.getId()}</td>--%>
+                <%--<td>${meal.getDateTimeWithoutT()}</td>--%>
+                <%--<td>${meal.getDescription()}</td>--%>
+                <%--<td>${meal.getCalories()}</td>--%>
+                <%--<td><a href="MealServlet?action=edit&mealId=<c:out value="${meal.mealid}"/>">Update</a></td>--%>
+                <%--<td><a href="MealServlet?action=delete&mealId=<c:out value="${meal.mealid}"/>">Delete</a></td>--%>
+            <%--</tr>--%>
+        <%--</c:if>--%>
 
-        <c:if test="${!meal.isExceed()}">
+        <%--<c:if test="${!meal.isExceed()}">--%>
             <tr>
+                <td>${meal.getId()}</td>
                 <td>${meal.getDateTimeWithoutT()}</td>
                 <td>${meal.getDescription()}</td>
                 <td>${meal.getCalories()}</td>
+                <td><a href="MealServlet?action=edit&mealId=<c:out value="${meal.getId()}"/>">Update</a></td>
+                <td><a href="MealServlet?action=delete&mealId=<c:out value="${meal.getId()}"/>">Delete</a></td>
             </tr>
-        </c:if>
+        <%--</c:if>--%>
     </c:forEach>
 </table>
 </div>
