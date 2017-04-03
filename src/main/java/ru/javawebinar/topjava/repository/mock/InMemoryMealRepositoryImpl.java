@@ -9,6 +9,7 @@ import ru.javawebinar.topjava.util.UsersUtil;
 import ru.javawebinar.topjava.util.exception.NotFoundException;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -57,7 +58,7 @@ public class InMemoryMealRepositoryImpl implements MealRepository {
     @Override
     public Collection<Meal> getAll() {
         LOG.info("getAll");
-        return MealsUtil.getFilteredByTime((List<Meal>) repository.values());
+        return repository.values().isEmpty() ? Collections.emptyList() : MealsUtil.getFilteredByTime((List<Meal>) repository.values());
     }
 }
 

@@ -29,14 +29,6 @@ public class Meal extends BaseEntity {
         this.calories = calories;
     }
 
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-
     public Integer getUserId() {
         return userId;
     }
