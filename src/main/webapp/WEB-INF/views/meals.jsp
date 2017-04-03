@@ -17,9 +17,9 @@
 </head>
 <body>
 <section>
-    <h2><a href="index.html">Home</a></h2>
+    <h2><a href="../../index.html">Home</a></h2>
     <h2>Meal list</h2>
-    <a href="meals?action=create">Add Meal</a>
+    <a href="<c:url value='/meal'/>">Add</a>
     <hr>
     <table border="1" cellpadding="8" cellspacing="0">
         <thead>
@@ -31,7 +31,7 @@
             <th></th>
         </tr>
         </thead>
-        <c:forEach items="${meals}" var="meal">
+        <c:forEach items="${listMeals}" var="meal">
             <jsp:useBean id="meal" scope="page" type="ru.javawebinar.topjava.to.MealWithExceed"/>
             <tr class="${meal.exceed ? 'exceeded' : 'normal'}">
                 <td>
@@ -41,8 +41,8 @@
                 </td>
                 <td>${meal.description}</td>
                 <td>${meal.calories}</td>
-                <td><a href="meals?action=update&id=${meal.id}">Update</a></td>
-                <td><a href="meals?action=delete&id=${meal.id}">Delete</a></td>
+                <td><a href="<c:url value='/edit/${meal.id}'/>">Update</a></td>
+                <td><a href="<c:url value='/remove/${meal.id}'/>">Remove</a></td>
             </tr>
         </c:forEach>
     </table>

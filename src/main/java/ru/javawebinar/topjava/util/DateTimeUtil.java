@@ -14,7 +14,7 @@ public class DateTimeUtil {
     public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
     public static boolean isBetween(Object d, Object startDate, Object endTime) {
-        if (d == LocalTime.class)
+        if (d.getClass() == LocalTime.class)
         {
             return ((LocalTime)d).compareTo((LocalTime) startDate) >= 0 && ((LocalTime)d).compareTo((LocalTime) endTime) <= 0;
         }

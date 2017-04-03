@@ -8,8 +8,6 @@ import ru.javawebinar.topjava.repository.UserRepository;
 import ru.javawebinar.topjava.util.UsersUtil;
 import ru.javawebinar.topjava.util.exception.NotFoundException;
 
-import javax.jws.soap.SOAPBinding;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
